@@ -1,0 +1,8 @@
+**/node_modules
+**/dist
+**/package.json
+**/package-lock.json
+**/yarn.lock
+**/.eslintrc.json
+**/tsconfig.json
+**/.prettierrc.json
