@@ -1,10 +1,6 @@
 .chat-page {
   display: flex;
-}
-
-/*поле поиска*/
-.search-input {
-  background: #a3d0c3;
+  height: 100vh;
 }
 
 .search-input {
@@ -14,6 +10,6 @@
   border: 2px solid #7ba7ab;
   border-radius: 5px;
   outline: none;
-  background: #f9f0da;
-  color: #9e9c9c;
+  background: rgb(146, 152, 155);
+  color: rgb(0, 0, 0);
 }

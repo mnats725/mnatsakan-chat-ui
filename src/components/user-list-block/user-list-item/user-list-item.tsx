@@ -4,11 +4,12 @@ type UserListItemArgs = {
   userName: string;
   messageDate: string;
   messageText: string;
+  avatar: string;
 };
 
-export const UserListItem = ({ userName, messageDate, messageText }: UserListItemArgs): JSX.Element => (
-  <li>
-    <img src='' alt='user avatar' />
+export const UserListItem = ({ userName, messageDate, messageText, avatar }: UserListItemArgs): JSX.Element => (
+  <li className='user-list-item'>
+    <img src={avatar} alt='user avatar' />
     <div className='message-info-block'>
       <div className='message-title-block'>
         <h4 className='user-name'>{userName}</h4>

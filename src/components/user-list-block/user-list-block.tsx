@@ -10,8 +10,14 @@ export const UserListBlock = (): JSX.Element => (
       <input className='search-input' type='text' placeholder='Искать здесь...' />
     </div>
     <ul className='user-list'>
-      {MOCK_USER_MESSAGES.map(({ userName, messageDate, messageText }) => (
-        <UserListItem key={userName} userName={userName} messageDate={messageDate} messageText={messageText} />
+      {MOCK_USER_MESSAGES.map(({ userName, messageDate, messageText, avatar }) => (
+        <UserListItem
+          key={userName}
+          userName={userName}
+          messageDate={messageDate}
+          messageText={messageText}
+          avatar={avatar}
+        />
       ))}
     </ul>
   </div>

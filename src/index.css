@@ -11,6 +11,20 @@ ol {
   padding: 0;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
 /* Убираем внешние отступы */
 body,
 h1,
