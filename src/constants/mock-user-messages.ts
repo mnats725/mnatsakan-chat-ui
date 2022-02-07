@@ -34,4 +34,104 @@ export const MOCK_USER_MESSAGES = [
     messageText: 'HII HII HIIII!',
     avatar: userLogo,
   },
+  {
+    userName: 'Kirill',
+    messageDate: '09:42',
+    messageText:
+      'hello MNATS! DJAgkjakdjgkadjkg jakdGJ KAJDGK jadkgj kadjgk ajdkg jakdgjk adjgk ajdkgj akdjg kadjgk ajdgk ajd',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Alexei',
+    messageDate: '04:20',
+    messageText: 'HIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Lesha',
+    messageDate: '04:19',
+    messageText: 'hello!',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Max',
+    messageDate: '13:12',
+    messageText: 'HII HII HIIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Kirill',
+    messageDate: '09:42',
+    messageText:
+      'hello MNATS! DJAgkjakdjgkadjkg jakdGJ KAJDGK jadkgj kadjgk ajdkg jakdgjk adjgk ajdkgj akdjg kadjgk ajdgk ajd',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Alexei',
+    messageDate: '04:20',
+    messageText: 'HIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Lesha',
+    messageDate: '04:19',
+    messageText: 'hello!',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Max',
+    messageDate: '13:12',
+    messageText: 'HII HII HIIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Kirill',
+    messageDate: '09:42',
+    messageText:
+      'hello MNATS! DJAgkjakdjgkadjkg jakdGJ KAJDGK jadkgj kadjgk ajdkg jakdgjk adjgk ajdkgj akdjg kadjgk ajdgk ajd',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Alexei',
+    messageDate: '04:20',
+    messageText: 'HIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Lesha',
+    messageDate: '04:19',
+    messageText: 'hello!',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Max',
+    messageDate: '13:12',
+    messageText: 'HII HII HIIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Kirill',
+    messageDate: '09:42',
+    messageText:
+      'hello MNATS! DJAgkjakdjgkadjkg jakdGJ KAJDGK jadkgj kadjgk ajdkg jakdgjk adjgk ajdkgj akdjg kadjgk ajdgk ajd',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Alexei',
+    messageDate: '04:20',
+    messageText: 'HIII!',
+    avatar: userLogo,
+  },
+  {
+    userName: 'Lesha',
+    messageDate: '04:19',
+    messageText: 'hello!',
+    avatar: userLogo2,
+  },
+  {
+    userName: 'Max',
+    messageDate: '13:12',
+    messageText: 'HII HII HIIII!',
+    avatar: userLogo,
+  },
 ] as const;
