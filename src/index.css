@@ -99,6 +99,26 @@ option {
   border-radius: 4px;
 }
 
+/* Скрол бар*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d4d4d4;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #939393;
+  border-radius: 8px;
+  border: 3px solid #d4d4d4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
+
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
   * {
