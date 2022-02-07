@@ -1,5 +1,6 @@
 .user-list-block {
   width: 40%;
+  overflow-y: auto; /* прокрутка по вертикали */
 }
 
 .user-list-block .user-list {
