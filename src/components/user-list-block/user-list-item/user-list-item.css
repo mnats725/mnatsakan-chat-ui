@@ -12,21 +12,21 @@
 }
 
 .user-list-item img {
-  display: flex;
-  max-width: 46px;
-  width: 100%;
+  flex: 0 0 46px;
   border-radius: 100%;
-  margin-right: 10px;
   object-fit: cover;
 }
 
 .user-list-item .message-text {
-  display: block;
-  max-height: 20px;
+  -webkit-line-clamp: 1; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
 }
 
 .user-list-item .message-info-block {
   width: 100%;
+  padding: 0 14px;
 }
 
 .message-info-block .message-title-block {
