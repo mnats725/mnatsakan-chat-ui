@@ -1,1 +1,1 @@
-for start `yarn start / yarn open-start`
+To start this project enter:  `yarn start / yarn open-start`
