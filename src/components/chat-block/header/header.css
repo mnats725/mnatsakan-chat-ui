@@ -1,0 +1,20 @@
+.chat-header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  background-color: #6e82a0;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.user-information-block .username {
+  font-size: 14px;
+}
+.user-information-block .online-status {
+  font-size: 12px;
+}
+
+.chat-header .parametrs {
+  font-size: 14px;
+}

@@ -1,0 +1,36 @@
+.user-list-item {
+  display: flex;
+  cursor: pointer;
+
+  height: 66px;
+  width: 100%;
+  padding: 10px;
+}
+
+.user-list-item:hover {
+  background-color: #c4c6c9;
+}
+
+.user-list-item img {
+  flex: 0 0 46px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.user-list-item .message-text {
+  -webkit-line-clamp: 1; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+
+.user-list-item .message-info-block {
+  width: 100%;
+  padding: 0 14px;
+}
+
+.message-info-block .message-title-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
