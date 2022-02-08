@@ -7,6 +7,9 @@ import './user-list-block.css';
 export const UserListBlock = (): JSX.Element => (
   <div className='user-list-block'>
     <div className='search-block'>
+      <button type='button' className='search-button'>
+        Button
+      </button>
       <input className='search-input' type='text' placeholder='Искать здесь...' />
     </div>
     <ul className='user-list'>

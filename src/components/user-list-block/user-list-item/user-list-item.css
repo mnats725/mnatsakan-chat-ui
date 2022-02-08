@@ -1,7 +1,7 @@
 .user-list-item {
   display: flex;
   cursor: pointer;
-
+  transition: ease-out all 0.2s;
   height: 66px;
   width: 100%;
   padding: 10px;
