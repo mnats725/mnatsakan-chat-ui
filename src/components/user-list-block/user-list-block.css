@@ -11,14 +11,12 @@
 .search-block {
   display: flex;
   width: 100%;
-  background-color: rgb(255, 255, 255);
   padding: 10px 10px;
 }
 
 .search-block .search-input {
   width: 100%;
   border: 2px solid transparent;
-  color: rgb(0, 0, 0);
   border-radius: 4px;
   padding: 8px 10px;
   transition: ease-out 0.2s;
