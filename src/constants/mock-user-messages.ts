@@ -2,7 +2,9 @@ import userLogo from '../components/user-list-block/user-list-item/assets/user-l
 import userLogo2 from '../components/user-list-block/user-list-item/assets/user-logo2.jpg';
 import userLogo3 from '../components/user-list-block/user-list-item/assets/user-logo3.jpg';
 
-export const MOCK_USER_MESSAGES = [
+import type { UserMessage } from '../types/user-message';
+
+export const MOCK_USER_MESSAGES: UserMessage[] = [
   {
     userName: 'mnats',
     messageDate: '23:42',
@@ -134,4 +136,4 @@ export const MOCK_USER_MESSAGES = [
     messageText: 'HII HII HIIII!',
     avatar: userLogo,
   },
-] as const;
+];
