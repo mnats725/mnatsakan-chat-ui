@@ -4,3 +4,9 @@
   z-index: 2;
   background-color: black;
 }
+
+@media (max-width: 580px) {
+  .chat-block {
+    display: none;
+  }
+}

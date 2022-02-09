@@ -26,3 +26,15 @@
 .search-input:focus {
   border: 2px solid #5ab9e6;
 }
+
+@media (max-width: 930px) {
+  .user-list-block {
+    width: 66%;
+  }
+}
+
+@media (max-width: 660px) {
+  .user-list-block {
+    width: 100%;
+  }
+}
