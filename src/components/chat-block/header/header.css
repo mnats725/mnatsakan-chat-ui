@@ -1,68 +1,46 @@
 .chat-header {
-  position: absolute;
-  width: 100%;
   display: flex;
+  position: absolute;
   justify-content: space-between;
-  z-index: 100;
-  border: 0px;
-  padding: 10px;
-  padding-top: 2px;
-  padding-bottom: 4px;
-  border-bottom: 1px;
-  border-style: solid;
-  border-color: #919191;
-  background-color: #ffffff;
+  width: 100%;
+  padding: 4px 14px;
+  background-color: #303030;
+  color: #ffffff;
 }
 
 .user-information-block .username {
   font-size: 14px;
 }
+
 .user-information-block .online-status {
   font-size: 12px;
 }
 
-.chat-header .parametrs-menu {
+.chat-menu-block {
+  position: relative;
+}
+
+.chat-menu-block .chat-menu-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 34px;
+  height: 100%;
   cursor: pointer;
+  background-color: transparent;
 }
 
-.parametrs-menu span {
+.chat-menu-button span {
+  position: relative;
+  color: #ffffff;
+}
+
+.chat-menu-button span::before {
+  content: '•••';
   position: absolute;
-  background-color: rgb(0, 0, 0);
-  width: 5px;
-  height: 5px;
-  top: 22px;
-  z-index: 3;
-  border-radius: 50%;
-}
-.parametrs-menu:after,
-.parametrs-menu:before {
-  content: '';
-  background-color: rgb(0, 0, 0);
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-}
-.parametrs-menu:before {
-  top: 15px;
-}
-.parametrs-menu::after {
-  bottom: 20px;
-}
-.parametrs-list {
-  /* display: flex; */
-}
-.parametrs-list li {
-  /* list-style: none;
-  margin: 0px 0px 0px 20px; */
-}
-.parametrs-link {
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 14px;
-  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-size: 18px;
+  letter-spacing: 4px;
 }

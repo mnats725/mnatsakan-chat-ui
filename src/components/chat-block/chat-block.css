@@ -10,3 +10,24 @@
     display: none;
   }
 }
+
+.message-input-field-block {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  bottom: 0;
+  background-color: #303030;
+}
+
+.message-input-field-block textarea {
+  width: 100%;
+  padding: 10px 0;
+  color: #ffffff;
+  resize: none;
+}
+
+.message-input-field-block textarea::placeholder {
+  color: #ffffff;
+}
