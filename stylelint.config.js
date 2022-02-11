@@ -2,7 +2,7 @@ module.exports = {
   extends: [require.resolve('stylelint-prettier/recommended')],
   rules: {
     'block-no-empty': true,
-    'color-hex-length': 'short',
+    'color-hex-length': 'long',
     'color-no-invalid-hex': true,
     'comment-empty-line-before': [
       'always',
