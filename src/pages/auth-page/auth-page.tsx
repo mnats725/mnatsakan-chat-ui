@@ -6,7 +6,7 @@ export const AuthPage = (): JSX.Element => (
       <h1>login</h1>
       <input type='text' name='' placeholder='Username' />
       <input type='password' name='' placeholder='Password' />
-      <button className='button' type='submit'>
+      <button className='submit-button' type='submit'>
         Login
       </button>
     </form>

@@ -1,3 +1,9 @@
+h1,
+.auth-form,
+.submit-button {
+  color: #ffffff;
+}
+
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -15,7 +21,6 @@
 }
 
 .auth-form h1 {
-  color: #ffffff;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -24,7 +29,6 @@
   text-align: center;
   border: 2px solid #3498db;
   padding: 14px 10px;
-  color: #ffffff;
   border-radius: 24px;
   transition: 0.24s;
 }
@@ -33,18 +37,16 @@
   border-color: #1846dd;
 }
 
-.button {
+.submit-button {
   background: transparent;
-  margin: 20px auto;
   text-align: center;
   border: 2px solid #3498db;
   padding: 14px 40px;
-  color: #ffffff;
   border-radius: 24px;
   transition: 0.24s;
   cursor: pointer;
 }
 
-.button:hover {
+.submit-button:hover {
   background: #1846dd;
 }
