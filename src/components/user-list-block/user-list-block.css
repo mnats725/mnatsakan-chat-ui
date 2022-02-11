@@ -1,5 +1,11 @@
 .user-list-block {
   width: 40%;
+  border-left: 0px;
+  border-right: 1px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-style: solid;
+  border-color: #b1b1b1;
 }
 
 .user-list-block .user-list {

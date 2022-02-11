@@ -2,10 +2,16 @@
   position: absolute;
   width: 100%;
   display: flex;
-  padding: 10px;
-  background-color: #6e82a0;
   justify-content: space-between;
   z-index: 100;
+  border: 0px;
+  padding: 10px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #919191;
+  background-color: #ffffff;
 }
 
 .user-information-block .username {
@@ -15,6 +21,48 @@
   font-size: 12px;
 }
 
-.chat-header .parametrs {
+.chat-header .parametrs-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  cursor: pointer;
+}
+
+.parametrs-menu span {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 5px;
+  height: 5px;
+  top: 22px;
+  z-index: 3;
+  border-radius: 50%;
+}
+.parametrs-menu:after,
+.parametrs-menu:before {
+  content: '';
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+.parametrs-menu:before {
+  top: 15px;
+}
+.parametrs-menu::after {
+  bottom: 20px;
+}
+.parametrs-list {
+  /* display: flex; */
+}
+.parametrs-list li {
+  /* list-style: none;
+  margin: 0px 0px 0px 20px; */
+}
+.parametrs-link {
+  color: #000000;
+  text-transform: uppercase;
   font-size: 14px;
+  text-decoration: none;
 }

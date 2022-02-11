@@ -1,12 +1,36 @@
 import './header.css';
 
-export const Header = (): JSX.Element => (
+type HeaderArgs = {
+  name: string;
+  onlineStatus: string;
+};
+
+export const Header = ({ name, onlineStatus }: HeaderArgs): JSX.Element => (
   <header className='chat-header'>
     <div className='user-information-block'>
-      <p className='username'>Mnats</p>
-      <p className='online-status'>23:03</p>
+      <p className='username'>{name}</p>
+      <p className='online-status'>{onlineStatus}</p>
     </div>
 
-    <div className='parametrs'>Удалить</div>
+    <nav className='parametrs-menu'>
+      <span />
+      <ul className='parametrs-list'>
+        <li>
+          <a href='/user-profile' className='parametrs-link'>
+            {/* а */}
+          </a>
+        </li>
+        <li>
+          <a href='/clear-chat' className='parametrs-link'>
+            {/* d */}
+          </a>
+        </li>
+        <li>
+          <a href='/chat' className='parametrs-link'>
+            {/* c */}
+          </a>
+        </li>
+      </ul>
+    </nav>
   </header>
 );
