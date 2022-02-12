@@ -35,7 +35,7 @@
   color: #ffffff;
 }
 
-.chat-menu-button span::before {
+.chat-menu-button span:before {
   content: '•••';
   position: absolute;
   top: 50%;
