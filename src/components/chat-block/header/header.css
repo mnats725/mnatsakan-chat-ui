@@ -44,3 +44,20 @@
   font-size: 18px;
   letter-spacing: 4px;
 }
+.chat-menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  right: 2px;
+  border: 4px;
+  border-radius: 4px;
+  background-color: #1f1f1f;
+  padding: 10px;
+
+  margin: 10px;
+  list-style: none;
+}
+.chat-menu li {
+  width: 100%;
+  color: #ffffff;
+}
