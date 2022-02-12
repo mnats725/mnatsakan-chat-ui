@@ -29,6 +29,54 @@
   border: 2px solid #5ab9e6;
 }
 
+/*бургер меню*/
+.user-info-menu-block .user-menu-button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.user-menu-button span {
+  position: relative;
+  color: #ffffff;
+}
+
+.user-menu-button span:before {
+  content: '☰';
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 23px;
+  letter-spacing: 4px;
+}
+
+.user-info-menu {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 30px 50px 30px 30px;
+  background-color: #303030;
+}
+
+.user-info-menu li {
+  width: 100%;
+  color: #ffffff;
+  list-style-type: none;
+}
+
+/*бургер меню*/
+
 @media (max-width: 930px) {
   .user-list-block {
     width: 66%;
