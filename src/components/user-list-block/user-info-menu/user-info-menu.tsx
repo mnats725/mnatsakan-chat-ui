@@ -17,7 +17,7 @@ export const UserInfoMenu = ({ setVisible }: UserInfoMenuArgs): JSX.Element => {
   };
 
   return (
-    <PopupMenu time={200} mountStyles={maskStyle} setVisible={setVisible} className='popup-menu'>
+    <PopupMenu time={190} mountStyles={maskStyle} setVisible={setVisible} className='popup-menu'>
       <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
         Show User Profile
       </li>
