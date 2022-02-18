@@ -10,25 +10,6 @@
   overflow-y: auto;
 }
 
-.search-block {
-  display: flex;
-  width: 100%;
-  padding: 10px;
-}
-
-.search-block .search-input {
-  width: 100%;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  padding: 8px 10px;
-  transition: ease-out 0.2s;
-}
-
-.search-input:hover,
-.search-input:focus {
-  border: 2px solid #5ab9e6;
-}
-
 @media (max-width: 930px) {
   .user-list-block {
     width: 66%;
