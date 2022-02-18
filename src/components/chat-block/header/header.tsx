@@ -24,7 +24,7 @@ export const Header = ({ name, onlineStatus }: HeaderArgs): JSX.Element => {
         <button type='button' className='chat-menu-button' onClick={onShowMenu}>
           <span />
         </button>
-        {isMenuVisible === true && (
+        {isMenuVisible && (
           <menu className='chat-menu'>
             <li>menu1</li>
             <li>menu2</li>
@@ -35,27 +35,3 @@ export const Header = ({ name, onlineStatus }: HeaderArgs): JSX.Element => {
     </header>
   );
 };
-
-// export const Sost = (): JSX.Element => {
-//   const [сlickedButton, setСlickedButton] = useState(false);
-
-//   const onclick = () => {
-//     setСlickedButton(true);
-//   };
-
-//   return (
-//     <div className='chat-menu-block'>
-//       <button type='button' className='chat-menu-button' onClick={onclick}>
-//         {/* dsdsds */}
-//         <span />
-//       </button>
-//       {сlickedButton === true && (
-//         <menu className='chat-menu'>
-//           <li>menu1</li>
-//           <li>menu2</li>
-//           <li>menu3</li>
-//         </menu>
-//       )}
-//     </div>
-//   );
-// };
