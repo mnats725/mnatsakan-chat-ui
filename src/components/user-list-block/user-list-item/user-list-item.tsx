@@ -9,7 +9,7 @@ type UserListItemArgs = {
 
 export const UserListItem = ({ userName, messageDate, messageText, avatar }: UserListItemArgs): JSX.Element => (
   <li className='user-list-item'>
-    <img src={avatar} alt='user avatar' />
+    <img src={avatar} alt='user avatar' className='unselectable' />
     <div className='message-info-block'>
       <div className='message-title-block'>
         <h4 className='user-name'>{userName}</h4>

@@ -20,6 +20,7 @@ textarea {
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+  padding: 0;
   background-color: transparent;
   border: 0;
   outline: none;
@@ -59,8 +60,11 @@ body {
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class */
+menu[class],
 ul[class],
 ol[class] {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -132,4 +136,13 @@ option {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
