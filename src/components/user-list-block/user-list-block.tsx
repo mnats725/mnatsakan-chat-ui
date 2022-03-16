@@ -14,9 +14,9 @@ export const UserListBlock = (): JSX.Element => {
     <div className='user-list-block'>
       <SearchBlock defaultMessages={MOCK_USER_MESSAGES} setMessages={setUserMessages} />
       <ul className='user-list'>
-        {userMessages.map(({ userName, messageDate, messageText, avatar }, index) => (
+        {userMessages.map(({ userName, messageDate, messageText, avatar, id }) => (
           <UserListItem
-            key={index.toString()}
+            key={id}
             userName={userName}
             messageDate={messageDate}
             messageText={messageText}
