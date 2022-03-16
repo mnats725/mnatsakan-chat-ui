@@ -1,15 +1,17 @@
 .messages-block {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
   row-gap: 10px;
   flex-grow: 1;
   overflow-y: auto;
   padding: 20px;
+  width: 100%;
+  flex-basis: content;
 }
 
 .messages-block li {
   display: inline-flex;
+  align-self: flex-start;
   position: relative;
   flex-direction: column;
   min-width: 56px;
@@ -17,6 +19,10 @@
   border-radius: 12px;
   background-color: rgba(43, 43, 43, 0.822);
   color: #ffffff;
+}
+
+.messages-block li.is-current-user {
+  align-self: flex-end;
 }
 
 .messages-block li .message-wrapper {

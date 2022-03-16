@@ -7,26 +7,29 @@ import type { FirebaseMessage } from '../types/firebase-message';
 
 type UseFirestore = [FirebaseMessage[] | undefined, (document: FirebaseMessage) => void];
 
-export const useMessages = (path: string): UseFirestore => {
-  const chatReference = collection(firebaseStore, path) as CollectionReference<FirebaseMessage>;
-  const [messages, setMessages] = useState<FirebaseMessage[]>([]);
+export const useMessages = (chatId: string): UseFirestore => {
+  const messagesReference = collection(
+    firebaseStore,
+    `chats/${chatId}/messages`
+  ) as CollectionReference<FirebaseMessage>;
+  const [newMessages, setNewMessages] = useState<FirebaseMessage[]>([]);
 
   const sendNewMessageToFirebase = (message: FirebaseMessage) => {
-    addDoc(chatReference, message).catch((reason) => console.log(reason));
+    addDoc(messagesReference, message).catch((reason) => console.log(reason));
   };
 
-  const onSetMessages = (chat: QuerySnapshot<Omit<FirebaseMessage, 'id'>>) => {
-    const messagesData = chat.docs.map<FirebaseMessage>((message) => ({ id: message.id, ...message.data() }));
+  const onSetMessages = (messages: QuerySnapshot<Omit<FirebaseMessage, 'id'>>) => {
+    const messagesData = messages.docs.map<FirebaseMessage>((message) => ({ id: message.id, ...message.data() }));
 
-    setMessages(messagesData);
+    setNewMessages(messagesData);
   };
 
   useEffect(() => {
-    const chatQueryWithSort = query(chatReference, orderBy('timestamp', 'asc'));
-    const unsubscribe = onSnapshot(chatQueryWithSort, { next: (chat) => onSetMessages(chat) });
+    const messagesQueryWithSort = query(messagesReference, orderBy('timestamp', 'asc'));
+    const unsubscribe = onSnapshot(messagesQueryWithSort, { next: (messages) => onSetMessages(messages) });
 
     return () => unsubscribe();
-  }, [path]);
+  }, [chatId]);
 
-  return [messages, sendNewMessageToFirebase];
+  return [newMessages, sendNewMessageToFirebase];
 };
