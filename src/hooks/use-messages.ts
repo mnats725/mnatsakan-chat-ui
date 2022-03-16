@@ -5,7 +5,7 @@ import { firebaseStore } from '../firebase';
 
 import type { FirebaseMessage } from '../types/firebase-message';
 
-type UseFirestore = [FirebaseMessage[] | undefined, (document: FirebaseMessage) => void];
+type UseFirestore = [FirebaseMessage[] | undefined, (document: Omit<FirebaseMessage, 'id'>) => void];
 
 export const useMessages = (chatId: string): UseFirestore => {
   const messagesReference = collection(
@@ -14,7 +14,7 @@ export const useMessages = (chatId: string): UseFirestore => {
   ) as CollectionReference<FirebaseMessage>;
   const [newMessages, setNewMessages] = useState<FirebaseMessage[]>([]);
 
-  const sendNewMessageToFirebase = (message: FirebaseMessage) => {
+  const sendNewMessageToFirebase = (message: Omit<FirebaseMessage, 'id'>) => {
     addDoc(messagesReference, message).catch((reason) => console.log(reason));
   };
 
