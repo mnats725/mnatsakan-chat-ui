@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { UserInfoMenu } from '../user-info-menu';
 
-import type { UserMessage } from '../../../types/user-message';
 import type { FirebaseMessage } from '../../../types/firebase-message';
 
 import './search-block.css';

@@ -18,10 +18,8 @@
 }
 
 .user-list-item .message-text {
-  -webkit-line-clamp: 1; /* Число отображаемых строк */
-  display: -webkit-box; /* Включаем флексбоксы */
-  -webkit-box-orient: vertical; /* Вертикальная ориентация */
-  overflow: hidden; /* Обрезаем всё за пределами блока */
+  inline-size: 150px;
+  overflow: hidden;
 }
 
 .user-list-item .message-info-block {
@@ -33,4 +31,9 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.message-title-block .user-name {
+  inline-size: 150px;
+  overflow: hidden;
 }
