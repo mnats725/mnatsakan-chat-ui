@@ -6,7 +6,6 @@ import { firebaseStore } from '../firebase';
 import type { FirebaseMessage } from '../types/firebase-message';
 
 export const useChats = (): FirebaseMessage[] => {
-  const chatReference = collection(firebaseStore, 'chats') as CollectionReference<FirebaseMessage>;
   const [newChats, setNewChats] = useState<FirebaseMessage[]>([]);
 
   const onSetChats = (chats: QuerySnapshot<Omit<FirebaseMessage, 'id'>>) => {
@@ -16,7 +15,8 @@ export const useChats = (): FirebaseMessage[] => {
   };
 
   useEffect(() => {
-    const chatQueryWithSort = query(chatReference, orderBy('timestamp', 'asc'));
+    const chatReference = collection(firebaseStore, 'chats') as CollectionReference<FirebaseMessage>;
+    const chatQueryWithSort = query(chatReference, orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(chatQueryWithSort, { next: (chats) => onSetChats(chats) });
 
     return () => unsubscribe();

@@ -10,8 +10,8 @@ import './chat-page.css';
 
 export const ChatPage = (): JSX.Element => {
   const [currentChatId, setCurrentChatId] = useState('');
-  const chats = useChats();
   const userId = useAuth();
+  const chats = useChats();
 
   return (
     <div className='chat-page'>

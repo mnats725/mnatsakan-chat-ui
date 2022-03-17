@@ -35,7 +35,7 @@ export const ChatBlock = ({ userId, chatId }: ChatBlockArgs): JSX.Element => {
 
   return (
     <div className='chat-block'>
-      <Header name='kirill' onlineStatus='21:20' />
+      <Header name={chatId} onlineStatus='21:20' />
       <Messages messages={messages} currentUserId={userId} />
       <div className='message-input-field-block'>
         <TextareaAutosize

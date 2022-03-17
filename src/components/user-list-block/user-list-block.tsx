@@ -26,12 +26,11 @@ export const UserListBlock = ({ chats, setCurrentChatId }: UserListBlockArgs): J
     <div className='user-list-block'>
       <SearchBlock defaultChats={chats} setChats={setFilteredChats} />
       <ul className='user-list'>
-        {filteredChats?.map(({ name, text, timestamp, id }) => (
+        {filteredChats?.map(({ text, timestamp, id }) => (
           <UserListItem
-            setCurrentChatId={setCurrentChatId}
-            chatId={id}
+            onClick={() => setCurrentChatId(id)}
             key={id}
-            userName={name}
+            userName={id}
             messageDate={format(timestamp.toDate(), 'HH:mm')}
             messageText={text}
           />
