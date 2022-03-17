@@ -24,8 +24,10 @@ export const PopupMenu = ({ setVisible, children, className, mountStyles, time }
   };
 
   return (
-    <div aria-hidden style={maskStyle} onClick={onMaskClick} className='popup-menu-mask'>
-      <menu className={className}>{children}</menu>
+    <div aria-hidden onClick={onMaskClick} className='popup-menu-mask'>
+      <menu style={maskStyle} className={className}>
+        {children}
+      </menu>
     </div>
   );
 };

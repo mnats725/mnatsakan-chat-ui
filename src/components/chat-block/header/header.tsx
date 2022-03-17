@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { ChatSettingsPopupMenu } from '../chat-settings-popup-menu';
+
 import './header.css';
 
 type HeaderArgs = {
@@ -20,18 +22,12 @@ export const Header = ({ name, onlineStatus }: HeaderArgs): JSX.Element => {
         <p className='username'>{name}</p>
         <p className='online-status'>{onlineStatus}</p>
       </div>
-      <div className='chat-menu-block'>
-        <button type='button' className='chat-menu-button' onClick={onShowMenu}>
-          <span />
-        </button>
-        {isMenuVisible && (
-          <menu className='chat-menu'>
-            <li>menu1</li>
-            <li>menu2</li>
-            <li>menu3</li>
-          </menu>
-        )}
-      </div>
+
+      <button type='button' className='chat-menu-button' onClick={onShowMenu}>
+        <span />
+      </button>
+
+      {isMenuVisible && <ChatSettingsPopupMenu setVisible={setIsMenuVisible} />}
     </header>
   );
 };

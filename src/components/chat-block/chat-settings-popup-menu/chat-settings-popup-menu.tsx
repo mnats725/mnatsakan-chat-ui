@@ -1,15 +1,15 @@
 import { PopupMenu } from '../../popup-menu';
 
-import './user-info-menu.css';
+import './chat-settings-popup-menu.css';
 
-type UserInfoMenuArgs = {
+type ChatSettingsPopupMenuArgs = {
   setVisible: (isVisible: boolean) => void;
 };
 
-export const UserInfoMenu = ({ setVisible }: UserInfoMenuArgs): JSX.Element => {
-  const maskStyle = {
-    mounted: { animation: 'inMenuVisible 0.2s' },
-    unmounted: { animation: 'outMenuVisible 0.2s' },
+export const ChatSettingsPopupMenu = ({ setVisible }: ChatSettingsPopupMenuArgs): JSX.Element => {
+  const mountStyles = {
+    mounted: { animation: 'inChatMenuVisible ease-in 0.2s' },
+    unmounted: { animation: 'outChatMenuVisible ease-out 0.2s' },
   };
 
   const onMenuElementClick = (event: React.MouseEvent) => {
@@ -17,15 +17,15 @@ export const UserInfoMenu = ({ setVisible }: UserInfoMenuArgs): JSX.Element => {
   };
 
   return (
-    <PopupMenu time={180} mountStyles={maskStyle} setVisible={setVisible} className='popup-menu'>
+    <PopupMenu className='chat-menu' mountStyles={mountStyles} time={180} setVisible={setVisible}>
       <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
         Show User Profile
       </li>
       <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
-        menu 2
+        Disable notifications
       </li>
       <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
-        menu 3
+        Delete Chat
       </li>
     </PopupMenu>
   );

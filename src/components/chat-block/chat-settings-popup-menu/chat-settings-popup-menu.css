@@ -1,0 +1,48 @@
+.chat-header .chat-menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 60px;
+  right: 4px;
+  border: 4px;
+  padding: 10px 0;
+  border-radius: 4px;
+  background-color: #303030;
+  transform-origin: top right;
+}
+
+.chat-menu li {
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 50px 10px 20px;
+  color: #ffffff;
+  border-radius: 6px;
+  transition: ease-out 0.2s;
+}
+
+.chat-menu li:hover {
+  background-color: #444444;
+}
+
+@keyframes inChatMenuVisible {
+  0% {
+    transform: scale3d(0.4, 0.4, 0.4);
+    opacity: 0;
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes outChatMenuVisible {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
