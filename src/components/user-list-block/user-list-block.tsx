@@ -1,26 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
 import { UserListItem } from './user-list-item';
 import { SearchBlock } from './search-block';
 
-import { MOCK_USER_MESSAGES } from '../../constants/mock-user-messages';
+import type { FirebaseMessage } from '../../types/firebase-message';
 
 import './user-list-block.css';
 
-export const UserListBlock = (): JSX.Element => {
-  const [userMessages, setUserMessages] = useState(MOCK_USER_MESSAGES);
+type UserListBlockArgs = {
+  setCurrentChatId: (chatId: string) => void;
+  chats: FirebaseMessage[] | undefined;
+};
+
+export const UserListBlock = ({ chats, setCurrentChatId }: UserListBlockArgs): JSX.Element => {
+  const [filteredChats, setFilteredChats] = useState(chats);
+
+  useEffect(() => {
+    if (chats) {
+      setFilteredChats(chats);
+    }
+  }, [chats]);
 
   return (
     <div className='user-list-block'>
-      <SearchBlock defaultMessages={MOCK_USER_MESSAGES} setMessages={setUserMessages} />
+      <SearchBlock defaultChats={chats} setChats={setFilteredChats} />
       <ul className='user-list'>
-        {userMessages.map(({ userName, messageDate, messageText, avatar }, index) => (
+        {filteredChats?.map(({ text, timestamp, id }) => (
           <UserListItem
-            key={index.toString()}
-            userName={userName}
-            messageDate={messageDate}
-            messageText={messageText}
-            avatar={avatar}
+            onClick={() => setCurrentChatId(id)}
+            key={id}
+            userName={id}
+            messageDate={format(timestamp.toDate(), 'HH:mm')}
+            messageText={text}
           />
         ))}
       </ul>

@@ -34,3 +34,8 @@
   justify-content: space-between;
   width: 100%;
 }
+
+.message-title-block .user-name {
+  inline-size: 150px;
+  overflow: hidden;
+}

@@ -1,7 +1,7 @@
 .chat-header {
   display: flex;
-  position: absolute;
   justify-content: space-between;
+  flex-shrink: 0;
   width: 100%;
   padding: 4px 14px;
   background-color: #303030;

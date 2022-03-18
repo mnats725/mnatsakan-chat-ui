@@ -2,25 +2,29 @@ import React, { useState } from 'react';
 
 import { UserInfoMenu } from '../user-info-menu';
 
-import type { UserMessage } from '../../../types/user-message';
+import type { FirebaseMessage } from '../../../types/firebase-message';
 
 import './search-block.css';
 
 type SearchBlockArgs = {
-  defaultMessages: UserMessage[];
-  setMessages: (messages: UserMessage[]) => void;
+  defaultChats: FirebaseMessage[] | undefined;
+  setChats: (messages: FirebaseMessage[]) => void;
 };
 
-export const SearchBlock = ({ defaultMessages, setMessages }: SearchBlockArgs): JSX.Element => {
+export const SearchBlock = ({ defaultChats, setChats }: SearchBlockArgs): JSX.Element => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const onSearch = (event: React.FormEvent<HTMLInputElement>) => {
+    if (!defaultChats) {
+      return;
+    }
+
     const searchValue = event.currentTarget.value;
-    const filteredMessages = defaultMessages.filter(({ messageText }) => {
-      return messageText.toLowerCase().includes(searchValue.toLowerCase());
+    const filteredMessages = defaultChats.filter(({ text }) => {
+      return text.toLowerCase().includes(searchValue.toLowerCase());
     });
 
-    setMessages(filteredMessages);
+    setChats(filteredMessages);
   };
 
   const onMenuShow = (event: React.MouseEvent) => {

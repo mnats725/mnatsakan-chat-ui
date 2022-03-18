@@ -1,5 +1,5 @@
 .user-list-block {
-  width: 40%;
+  min-width: 20%;
   border: solid #b1b1b1;
   border-width: 0 1px;
 }
