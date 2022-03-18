@@ -39,6 +39,7 @@
   },
   "rules": {
     // Existing rules
+    "react/require-default-props": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "comma-dangle": "off", // https://eslint.org/docs/rules/comma-dangle

@@ -1,20 +1,46 @@
 .chat-header {
-  position: absolute;
-  width: 100%;
   display: flex;
-  padding: 10px;
-  background-color: #6e82a0;
   justify-content: space-between;
-  z-index: 100;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 4px 14px;
+  background-color: #303030;
+  color: #ffffff;
 }
 
 .user-information-block .username {
   font-size: 14px;
 }
+
 .user-information-block .online-status {
   font-size: 12px;
 }
 
-.chat-header .parametrs {
-  font-size: 14px;
+.chat-menu-block {
+  position: relative;
+}
+
+.chat-menu-block .chat-menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.chat-menu-button span {
+  position: relative;
+  color: #ffffff;
+}
+
+.chat-menu-button span:before {
+  content: '•••';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-size: 18px;
+  letter-spacing: 4px;
 }
