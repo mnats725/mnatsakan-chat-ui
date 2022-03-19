@@ -1,9 +1,12 @@
 import { AuthPage } from '../../pages/auth-page';
 
-import './app.css';
+import { useAuth } from '../../hooks/use-auth';
 
-export const App = (): JSX.Element => (
-  <div className='app'>
-    <AuthPage />
-  </div>
-);
+import './app.css';
+import { ChatPage } from '../../pages/chat-page';
+
+export const App = (): JSX.Element => {
+  const userInformation = useAuth();
+
+  return <div className='app'>{userInformation ? <ChatPage userInformation={userInformation} /> : <AuthPage />}</div>;
+};

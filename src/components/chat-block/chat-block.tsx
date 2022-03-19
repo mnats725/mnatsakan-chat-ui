@@ -7,14 +7,16 @@ import { Messages } from './messages';
 
 import { useMessages } from '../../hooks/use-messages';
 
+import type { UserInformation } from '../../types/user-information';
+
 import './chat-block.css';
 
 type ChatBlockArgs = {
-  userId: string;
+  userInformaion: UserInformation;
   chatId: string;
 };
 
-export const ChatBlock = ({ userId, chatId }: ChatBlockArgs): JSX.Element => {
+export const ChatBlock = ({ userInformaion: { userId, username }, chatId }: ChatBlockArgs): JSX.Element => {
   const [messages, sendMessage] = useMessages(chatId);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -22,12 +24,7 @@ export const ChatBlock = ({ userId, chatId }: ChatBlockArgs): JSX.Element => {
     if (event.key === 'Enter' && event.shiftKey === false && textAreaRef.current) {
       event.preventDefault();
 
-      sendMessage({
-        userId,
-        name: userId,
-        text: event.currentTarget.value,
-        timestamp: Timestamp.fromDate(new Date()),
-      });
+      sendMessage({ username, userId, text: event.currentTarget.value, timestamp: Timestamp.fromDate(new Date()) });
 
       textAreaRef.current.value = '';
     }
