@@ -1,6 +1,6 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { RegistrationPage } from '../../pages/registration-page';
+import { AuthPage } from '../../pages/auth-page';
 import { ChatPage } from '../../pages/chat-page';
 import { Loading } from '../loading';
 
@@ -17,16 +17,13 @@ export const App = (): JSX.Element => {
         <Loading />
       ) : (
         <>
-          <Redirect to={{ pathname: userInformation ? '/' : '/login' }} />
+          <Redirect to={{ pathname: userInformation ? '/' : '/auth' }} />
           <Switch>
             <Route exact path='/'>
-              {userInformation && <ChatPage userInformation={userInformation} />}
+              <ChatPage userInformation={userInformation} />
             </Route>
-            <Route exact path='/registration'>
-              <RegistrationPage />
-            </Route>
-            <Route exact path='/login'>
-              <RegistrationPage />
+            <Route exact path='/auth'>
+              <AuthPage />
             </Route>
           </Switch>
         </>
