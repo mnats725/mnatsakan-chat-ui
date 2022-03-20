@@ -17,9 +17,9 @@ export const App = (): JSX.Element => {
         <Loading />
       ) : (
         <>
-          <Redirect to={{ pathname: userInformation ? '/chat' : '/login' }} />
+          <Redirect to={{ pathname: userInformation ? '/' : '/login' }} />
           <Switch>
-            <Route exact path='/chat'>
+            <Route exact path='/'>
               {userInformation && <ChatPage userInformation={userInformation} />}
             </Route>
             <Route exact path='/registration'>
