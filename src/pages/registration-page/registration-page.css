@@ -1,18 +1,17 @@
-.auth-page {
+.registration-page {
   height: 100%;
   width: 100%;
   background-image: url(./assets/screenshot_1.wLpo9.jpg);
 }
 
-h1,
-input,
-.auth-form,
+.registration-form input,
+.registration-form h1,
 .submit-button {
   color: #ffffff;
   text-align: center;
 }
 
-.auth-form {
+.registration-form {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -28,12 +27,12 @@ input,
 }
 
 /* Text */
-.auth-form h1 {
+.registration-form h1 {
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.auth-form .auth-result {
+.registration-form .registration-result {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -41,7 +40,7 @@ input,
 }
 
 /* Button */
-.auth-form .submit-button {
+.registration-form .submit-button {
   background: transparent;
   border: 2px solid #3498db;
   padding: 14px 40px;
@@ -50,34 +49,34 @@ input,
   cursor: pointer;
 }
 
-.auth-form .submit-button:active:hover {
+.registration-form .submit-button:active:hover {
   background: #1846dd;
 }
 
-.auth-form .submit-button:disabled {
+.registration-form .submit-button:disabled {
   color: #666666;
   cursor: inherit;
 }
 
 /* Field */
-.auth-form .auth-field-block {
+.registration-form .registration-field-block {
   display: flex;
   position: relative;
   flex-direction: column;
 }
 
-.auth-field-block input {
+.registration-field-block input {
   border: 2px solid #3498db;
   padding: 14px 10px;
   border-radius: 24px;
   transition: 0.3s;
 }
 
-.auth-field-block input:focus {
+.registration-field-block input:focus {
   border-color: #1846dd;
 }
 
-.auth-field-block span {
+.registration-field-block span {
   position: absolute;
   font-size: 12px;
   bottom: -24px;

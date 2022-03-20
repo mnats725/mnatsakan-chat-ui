@@ -1,6 +1,6 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { AuthPage } from '../../pages/auth-page';
+import { RegistrationPage } from '../../pages/registration-page';
 import { ChatPage } from '../../pages/chat-page';
 import { Loading } from '../loading';
 
@@ -23,10 +23,10 @@ export const App = (): JSX.Element => {
               {userInformation && <ChatPage userInformation={userInformation} />}
             </Route>
             <Route exact path='/registration'>
-              <AuthPage />
+              <RegistrationPage />
             </Route>
             <Route exact path='/login'>
-              <AuthPage />
+              <RegistrationPage />
             </Route>
           </Switch>
         </>

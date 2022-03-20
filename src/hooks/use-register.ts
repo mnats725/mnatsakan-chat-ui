@@ -4,18 +4,21 @@ import { doc, DocumentReference, setDoc } from 'firebase/firestore';
 
 import { firebaseAuth, firebaseStore } from '../firebase';
 
-import type { AuthForm } from '../types/forms/auth-form';
+import type { RegistrationForm } from '../types/forms/registration-form';
 import type { UserInformation } from '../types/user-information';
 
 type UseRegister = [
   isRegistered: string,
-  register: (authForm: AuthForm, setSubmitting: (isSubmitting: boolean) => void) => void
+  register: (authForm: RegistrationForm, setSubmitting: (isSubmitting: boolean) => void) => void
 ];
 
 export const useRegister = (): UseRegister => {
   const [response, setResponse] = useState('');
 
-  const onRegister = ({ email, password, username }: AuthForm, setSubmitting: (isSubmitting: boolean) => void) => {
+  const onRegister = (
+    { email, password, username }: RegistrationForm,
+    setSubmitting: (isSubmitting: boolean) => void
+  ) => {
     createUserWithEmailAndPassword(firebaseAuth, email, password)
       .then(({ user }) => {
         const userReference = doc(firebaseStore, 'users', user.uid) as DocumentReference<UserInformation>;

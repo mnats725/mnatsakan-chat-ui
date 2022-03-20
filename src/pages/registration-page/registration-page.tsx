@@ -3,32 +3,32 @@ import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import { useRegister } from '../../hooks/use-register';
 import { validate } from './validate';
 
-import { AuthFormFields } from '../../constants/form-fields/auth-form-fields';
+import { RegistrationFormFields } from '../../constants/form-fields/registration-form-fields';
 
-import type { AuthForm } from '../../types/forms/auth-form';
+import type { RegistrationForm } from '../../types/forms/registration-form';
 
-import './auth-page.css';
+import './registration-page.css';
 
-export const AuthPage = (): JSX.Element => {
+export const RegistrationPage = (): JSX.Element => {
   const [response, register] = useRegister();
-  const initialValues: AuthForm = {
+  const initialValues: RegistrationForm = {
     email: '',
     password: '',
     username: '',
   };
 
-  const onSubmit = (values: AuthForm, { setSubmitting }: FormikHelpers<AuthForm>) => {
+  const onSubmit = (values: RegistrationForm, { setSubmitting }: FormikHelpers<RegistrationForm>) => {
     register(values, setSubmitting);
   };
 
   return (
-    <div className='auth-page'>
+    <div className='registration-page'>
       <Formik validate={validate} onSubmit={onSubmit} initialValues={initialValues}>
         {({ isSubmitting, isValid, dirty }) => (
-          <Form className='auth-form'>
+          <Form className='registration-form'>
             <h1>login</h1>
-            {AuthFormFields.map(({ name, type, placeholder, errorComponentName }) => (
-              <div key={name} className='auth-field-block'>
+            {RegistrationFormFields.map(({ name, type, placeholder, errorComponentName }) => (
+              <div key={name} className='registration-field-block'>
                 <Field type={type} name={name} placeholder={placeholder} />
                 <ErrorMessage component={errorComponentName} name={name} />
               </div>
@@ -36,7 +36,7 @@ export const AuthPage = (): JSX.Element => {
             <button disabled={isSubmitting || !(isValid && dirty)} className='submit-button' type='submit'>
               Login
             </button>
-            <span className='auth-result'>{response}</span>
+            <span className='registration-result'>{response}</span>
           </Form>
         )}
       </Formik>

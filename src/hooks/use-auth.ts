@@ -19,7 +19,10 @@ export const useAuth = (): UseAuth => {
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (user) => {
-      if (!user) return;
+      if (!user) {
+        setIsLoading(false);
+        return;
+      }
 
       getDoc(doc(firebaseStore, 'users', user.uid) as DocumentReference<UserInformation>).then(onAuthed);
     });

@@ -15,9 +15,7 @@ export const SearchBlock = ({ defaultChats, setChats }: SearchBlockArgs): JSX.El
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const onSearch = (event: React.FormEvent<HTMLInputElement>) => {
-    if (!defaultChats) {
-      return;
-    }
+    if (!defaultChats) return;
 
     const searchValue = event.currentTarget.value;
     const filteredMessages = defaultChats.filter(({ text }) => {

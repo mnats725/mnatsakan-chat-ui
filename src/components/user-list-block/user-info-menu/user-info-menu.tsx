@@ -1,4 +1,8 @@
+import { signOut } from 'firebase/auth';
+
 import { PopupMenu } from '../../popup-menu';
+
+import { firebaseAuth } from '../../../firebase';
 
 import './user-info-menu.css';
 
@@ -12,20 +16,15 @@ export const UserInfoMenu = ({ setVisible }: UserInfoMenuArgs): JSX.Element => {
     unmounted: { animation: 'outMenuVisible 0.2s' },
   };
 
-  const onMenuElementClick = (event: React.MouseEvent) => {
+  const onExit = (event: React.MouseEvent) => {
     event.stopPropagation();
+    signOut(firebaseAuth);
   };
 
   return (
     <PopupMenu time={190} mountStyles={maskStyle} setVisible={setVisible} className='popup-menu'>
-      <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
-        Show User Profile
-      </li>
-      <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
-        menu 2
-      </li>
-      <li aria-hidden onClick={onMenuElementClick} className='unselectable'>
-        menu 3
+      <li aria-hidden onClick={onExit} className='unselectable'>
+        Выйти
       </li>
     </PopupMenu>
   );

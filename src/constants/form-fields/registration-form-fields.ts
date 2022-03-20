@@ -1,7 +1,7 @@
 import type { FormField } from '../../types/form-field';
-import type { AuthForm } from '../../types/forms/auth-form';
+import type { RegistrationForm } from '../../types/forms/registration-form';
 
-export const AuthFormFields: FormField<AuthForm>[] = [
+export const RegistrationFormFields: FormField<RegistrationForm>[] = [
   {
     name: 'email',
     type: 'text',
