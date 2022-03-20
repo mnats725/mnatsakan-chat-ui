@@ -5,6 +5,7 @@ import { doc, DocumentReference, setDoc } from 'firebase/firestore';
 import { firebaseAuth, firebaseStore } from '../firebase';
 
 import type { AuthForm } from '../types/forms/auth-form';
+import type { UserInformation } from '../types/user-information';
 
 type UseRegister = [
   isRegistered: string,
@@ -15,17 +16,14 @@ export const useRegister = (): UseRegister => {
   const [response, setResponse] = useState('');
 
   const onRegister = ({ email, password, username }: AuthForm, setSubmitting: (isSubmitting: boolean) => void) => {
-    const userReference = doc(firebaseStore, 'users', email) as DocumentReference<Omit<AuthForm, 'password'>>;
-
     createUserWithEmailAndPassword(firebaseAuth, email, password)
-      .then(() => {
-        setDoc(userReference, { username, email });
+      .then(({ user }) => {
+        const userReference = doc(firebaseStore, 'users', user.uid) as DocumentReference<UserInformation>;
+
+        setDoc(userReference, { userId: user.uid, username, email: user.email });
         setResponse('Вы успешно зарегистрировались');
       })
-      .catch((reason) => {
-        console.log(reason);
-        setResponse('Ошибка регистрации при запросе');
-      })
+      .catch(() => setResponse('Ошибка регистрации при запросе'))
       .finally(() => setSubmitting(false));
   };
 

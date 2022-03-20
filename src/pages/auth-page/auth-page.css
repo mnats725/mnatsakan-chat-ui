@@ -1,3 +1,9 @@
+.auth-page {
+  height: 100%;
+  width: 100%;
+  background-image: url(./assets/screenshot_1.wLpo9.jpg);
+}
+
 h1,
 input,
 .auth-form,
