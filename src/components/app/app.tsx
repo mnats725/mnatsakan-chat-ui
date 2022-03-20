@@ -6,6 +6,8 @@ import { Loading } from '../loading';
 
 import { useAuth } from '../../hooks/use-auth';
 
+import { PAGE_ROUTES } from '../../constants/page-routes';
+
 import './app.css';
 
 export const App = (): JSX.Element => {
@@ -16,17 +18,15 @@ export const App = (): JSX.Element => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
-          <Redirect to={{ pathname: userInformation ? '/' : '/auth' }} />
-          <Switch>
-            <Route exact path='/'>
-              <ChatPage userInformation={userInformation} />
-            </Route>
-            <Route exact path='/auth'>
-              <AuthPage />
-            </Route>
-          </Switch>
-        </>
+        <Switch>
+          <Route exact path={PAGE_ROUTES.main}>
+            {!userInformation && <Redirect to={PAGE_ROUTES.login} />}
+            <ChatPage userInformation={userInformation} />
+          </Route>
+          <Route path={PAGE_ROUTES.auth}>
+            <AuthPage />
+          </Route>
+        </Switch>
       )}
     </div>
   );

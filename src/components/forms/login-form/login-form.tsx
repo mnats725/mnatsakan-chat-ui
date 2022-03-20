@@ -24,7 +24,7 @@ export const LoginForm = (): JSX.Element => {
     <Formik validate={validate} onSubmit={onSubmit} initialValues={initialValues}>
       {({ isSubmitting, isValid, dirty }) => (
         <Form className='auth-form'>
-          <h1>login</h1>
+          <h1>Авторизация</h1>
           {LOGIN_FORM_FIELDS.map(({ name, type, placeholder }) => (
             <div key={name} className='auth-field-block'>
               <Field type={type} name={name} placeholder={placeholder} />
@@ -32,7 +32,7 @@ export const LoginForm = (): JSX.Element => {
             </div>
           ))}
           <button disabled={isSubmitting || !(isValid && dirty)} className='submit-button' type='submit'>
-            Login
+            Авторизоваться
           </button>
           <span className='auth-result'>{response}</span>
         </Form>

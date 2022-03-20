@@ -81,7 +81,7 @@ article > * + * {
 }
 
 button {
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   font: inherit;
 }

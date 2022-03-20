@@ -8,14 +8,10 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   font-family: sans-serif;
   border-radius: 10px;
   box-shadow: 0 0 0 3px #3498db;
   padding: 100px 150px;
-  transform: translate(-50%, -50%);
   background: #191919;
   row-gap: 40px;
 }
