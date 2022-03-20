@@ -1,23 +1,26 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 
-import { LOGIN_FORM_FIELDS } from '../../../constants/form-fields/login-form-fields';
+import { Loading } from '../../loading';
 
-import { useRegister } from '../../../hooks/use-register';
+import { useLogin } from '../../../hooks/use-login';
 import { validate } from './validate';
+
+import { LOGIN_FORM_FIELDS } from '../../../constants/form-fields/login-form-fields';
 
 import type { LoginFormValues } from '../../../types/forms/login-form-values';
 
 import '../auth-form.css';
 
 export const LoginForm = (): JSX.Element => {
-  const [response, register] = useRegister();
+  const [isAuthorized, login] = useLogin();
+
   const initialValues: LoginFormValues = {
     email: '',
     password: '',
   };
 
   const onSubmit = (values: LoginFormValues, { setSubmitting }: FormikHelpers<LoginFormValues>) => {
-    // register(values, setSubmitting);
+    login(values, setSubmitting);
   };
 
   return (
@@ -34,7 +37,9 @@ export const LoginForm = (): JSX.Element => {
           <button disabled={isSubmitting || !(isValid && dirty)} className='submit-button' type='submit'>
             Авторизоваться
           </button>
-          <span className='auth-result'>{response}</span>
+          <span className='auth-result'>{isAuthorized}</span>
+
+          {isSubmitting && <Loading />}
         </Form>
       )}
     </Formik>

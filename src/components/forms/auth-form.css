@@ -1,5 +1,4 @@
 .auth-form input,
-.auth-form h1,
 .submit-button {
   color: #ffffff;
   text-align: center;
@@ -7,6 +6,7 @@
 
 .auth-form {
   display: flex;
+  position: relative;
   flex-direction: column;
   font-family: sans-serif;
   border-radius: 10px;
@@ -14,6 +14,8 @@
   padding: 100px 150px;
   background: #191919;
   row-gap: 40px;
+  color: #ffffff;
+  text-align: center;
 }
 
 /* Text */

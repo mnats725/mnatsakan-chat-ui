@@ -1,5 +1,7 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 
+import { Loading } from '../../loading';
+
 import { REGISTRATION_FORM_FIELDS } from '../../../constants/form-fields/registration-form-fields';
 
 import { useRegister } from '../../../hooks/use-register';
@@ -36,6 +38,8 @@ export const RegistrationForm = (): JSX.Element => {
             Зарегистрироваться
           </button>
           <span className='auth-result'>{response}</span>
+
+          {isSubmitting && <Loading />}
         </Form>
       )}
     </Formik>

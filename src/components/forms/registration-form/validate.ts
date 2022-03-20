@@ -14,8 +14,7 @@ const InvalidErrorNames = {
 const isEmailValid = (email: string) =>
   /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
 
-const isPasswordValid = (password: string) =>
-  /(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g.test(password);
+const isPasswordValid = (password: string) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
 
 export const validate = (values: RegistrationFormValues): Record<string, string> => {
   const errors: Record<string, string> = {};

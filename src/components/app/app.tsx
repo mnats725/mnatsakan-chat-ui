@@ -11,7 +11,9 @@ import { PAGE_ROUTES } from '../../constants/page-routes';
 import './app.css';
 
 export const App = (): JSX.Element => {
-  const [userInformation, isLoading] = useAuth();
+  const { userInformation, isLoading } = useAuth();
+
+  console.log(userInformation);
 
   return (
     <div className='app'>
@@ -24,6 +26,7 @@ export const App = (): JSX.Element => {
             <ChatPage userInformation={userInformation} />
           </Route>
           <Route path={PAGE_ROUTES.auth}>
+            {userInformation && <Redirect to={PAGE_ROUTES.main} />}
             <AuthPage />
           </Route>
         </Switch>
