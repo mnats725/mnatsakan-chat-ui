@@ -1,23 +1,20 @@
 import type { FormField } from '../../types/form-field';
-import type { RegistrationForm } from '../../types/forms/registration-form';
+import type { RegistrationFormValues } from '../../types/forms/registration-form-values';
 
-export const RegistrationFormFields: FormField<RegistrationForm>[] = [
+export const REGISTRATION_FORM_FIELDS: FormField<RegistrationFormValues>[] = [
   {
     name: 'email',
     type: 'text',
     placeholder: 'Почта',
-    errorComponentName: 'span',
   },
   {
     name: 'username',
     type: 'text',
     placeholder: 'Логин',
-    errorComponentName: 'span',
   },
   {
     name: 'password',
     type: 'password',
     placeholder: 'Пароль',
-    errorComponentName: 'span',
   },
 ];

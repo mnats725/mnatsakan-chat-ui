@@ -1,9 +1,8 @@
-import type { RegistrationForm } from '../../types/forms/registration-form';
+import type { LoginFormValues } from '../../../types/forms/login-form-values';
 
-const EmptyErrorNames: RegistrationForm = {
+const EmptyErrorNames: LoginFormValues = {
   email: 'Введите почту',
   password: 'Введите пароль',
-  username: 'Введите имя',
 };
 
 const InvalidErrorNames = {
@@ -17,14 +16,11 @@ const isEmailValid = (email: string) =>
 const isPasswordValid = (password: string) =>
   /(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g.test(password);
 
-export const validate = (values: RegistrationForm): Record<string, string> => {
+export const validate = (values: LoginFormValues): Record<string, string> => {
   const errors: Record<string, string> = {};
 
   if (!values.email) {
     errors.email = EmptyErrorNames.email;
-  }
-  if (!values.username) {
-    errors.username = EmptyErrorNames.username;
   }
   if (!values.password) {
     errors.password = EmptyErrorNames.password;

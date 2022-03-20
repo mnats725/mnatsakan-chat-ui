@@ -1,23 +1,23 @@
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 
 import { useRegister } from '../../hooks/use-register';
-import { validate } from './validate';
+import { validate } from '../../components/forms/registration-form/validate';
 
 import { RegistrationFormFields } from '../../constants/form-fields/registration-form-fields';
 
-import type { RegistrationForm } from '../../types/forms/registration-form';
+import type { RegistrationFormValues } from '../../types/forms/registration-form-values';
 
 import './registration-page.css';
 
 export const RegistrationPage = (): JSX.Element => {
   const [response, register] = useRegister();
-  const initialValues: RegistrationForm = {
+  const initialValues: RegistrationFormValues = {
     email: '',
     password: '',
     username: '',
   };
 
-  const onSubmit = (values: RegistrationForm, { setSubmitting }: FormikHelpers<RegistrationForm>) => {
+  const onSubmit = (values: RegistrationFormValues, { setSubmitting }: FormikHelpers<RegistrationFormValues>) => {
     register(values, setSubmitting);
   };
 
